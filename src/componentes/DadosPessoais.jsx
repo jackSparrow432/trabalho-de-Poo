@@ -9,13 +9,8 @@ function DadosPessoais({dados,setDados}){
                 <form className="p-2 space-y-2">
                     
                     <input type="text" id="1" placeholder="Nome" className="bg-slate-500" 
-                    value={dados.Nome} 
-                    onChange={(e) =>setDados({ ...dados, Nome: e.target.value })}/><br/>
-                    
-                    <input type="text" id="2" placeholder="Sobrenome" className="bg-slate-500"
-                    value={dados.Sobrenome}
-                    onChange={(e)=>setDados({...dados, Sobrenome: e.target.value})}
-                    /><br/>
+                    value={dados.NomeCompleto}
+                    onChange={(e)=>setDados({...dados, NomeCompleto: e.target.value})}/><br/>
 
                     <input type="text" id="3" placeholder="Data de nascimento" className="bg-slate-500"
                     value={dados.DataNascimento}
