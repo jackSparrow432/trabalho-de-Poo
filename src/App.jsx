@@ -6,13 +6,19 @@ import GerarPdf from './componentes/GerarPdf'
 
 function App() {
   const [dados, setDados] = useState({
-    Nome: "",
-    Sobrenome: "",
-    DataNascimento: "",
-    Endereco: "",
-    NumeroTelefone: "",
-    Email: ""
-  });
+  NomeCompleto: "",
+  DataNascimento: "",
+  Endereco: "",
+  NumeroTelefone: "",
+  Email: "",
+  Foto: "",
+  Descricao: "",
+  Experiencia: "",
+  Formacao: "",
+  Cursos: "",
+  Habilidades: "",
+  Softwares: ""
+});
 
   return (
     <div className='w-screen h-screen bg-slate-500 flex justify-center p-6'>
