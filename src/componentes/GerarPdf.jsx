@@ -1,16 +1,16 @@
-import jsPDF from "jspdf";
+import html2pdf from "html2pdf.js";
 
-function GerarPdf(dadosPessoais){
-    const doc = new jsPDF();
+function GerarPdf() {
+  const elemento = document.getElementById("curriculo");
 
-    doc.text(`Nome: ${dadosPessoais.Nome}`, 10, 10);
-    doc.text(`Sobrenome: ${dadosPessoais.Sobrenome}`, 10, 20);
-    doc.text(`Data de nascimento: ${dadosPessoais.DataNascimento}`, 10, 30);
-    doc.text(`Endereço: ${dadosPessoais.Endereco}`, 10, 40);
-    doc.text(`Telefone: ${dadosPessoais.NumeroTelefone}`, 10, 50);
-    doc.text(`Email: ${dadosPessoais.Email}`, 10, 60);
+  const opcoes = {
+    margin: 0,
+    filename: "curriculo.pdf",
+    html2canvas: { scale: 2 },
+    jsPDF: { unit: "pt", format: "a4", orientation: "portrait" },
+  };
 
-    doc.save("curriculo.pdf");
+    html2pdf().set(opcoes).from(elemento).save();
 }
 
-export default GerarPdf
+export default GerarPdf;
