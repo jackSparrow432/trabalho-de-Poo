@@ -5,7 +5,18 @@ function DadosPessoais({dados,setDados}){
         <div className="space-y-4 p-6 bg-slate-200 rounded-md shadow">
             <div>
                 <img src={iconePessoa} alt="" style={{ width: "90px", height: "90px", objectFit: "cover" }}/>
-                <button>Adicionar foto</button>
+                <label>Foto</label>
+                <input 
+                  type="file" 
+                  accept="image/*"
+                  onChange={(e) => {
+                    const file = e.target.files[0];
+                    const leitor = new FileReader();
+                    leitor.onloadend = () => setDados({ ...dados, Foto: leitor.result });
+                    leitor.readAsDataURL(file);
+                  }}
+                />
+
                 <form className="p-2 space-y-2">
                     
                     <input type="text" id="1" placeholder="Nome" className="bg-slate-500" 
