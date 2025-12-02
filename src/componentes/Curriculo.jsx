@@ -59,7 +59,7 @@ function Curriculo({ dados }) {
       </div>
 
       {/* COLUNA DIREITA */}
-      <div style={{ width: "72%", padding: "40px 40px" }}>
+      <div style={{ width: "72%", padding: "40px 40px", color: "black"}}>
         <h1 style={{ marginTop: 0, fontSize: "32px" }}>
           {dados.NomeCompleto}
         </h1>
