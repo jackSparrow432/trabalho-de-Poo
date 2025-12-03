@@ -1,5 +1,5 @@
-import { useRef } from "react"
-import iconePessoa from "./iconePessoa.png"
+import { useRef } from "react";
+import iconePessoa from "./iconePessoa.png";
 function DadosPessoais({dados,setDados}){
 
     const escolher = useRef();
@@ -45,38 +45,41 @@ function handleFoto(e) {
                 <button onClick={escolherFoto}>Adicionar foto</button>
                 <form className="p-2 space-y-2">
                     
-                    <input type="text" id="1" placeholder="Nome" className="bg-slate-500" 
-                    value={dados.Nome} 
-                    onChange={(e) =>setDados({ ...dados, Nome: e.target.value })}
+                    <input type="text" id="1" placeholder="nome" className="bg-slate-500" 
+                    value={dados.nome} 
+                    onChange={(e) =>setDados({ ...dados, nome: e.target.value })}
                     /><br/>
                     
-                    <input type="text" id="2" placeholder="Sobrenome" className="bg-slate-500"
-                    value={dados.Sobrenome}
-                    onChange={(e)=>setDados({...dados, Sobrenome: e.target.value})}
+                    <input type="text" id="2" placeholder="Descrição" className="bg-slate-500"
+                    value={dados.descricao}
+                    onChange={(e)=>setDados({...dados, descricao: e.target.value})}
                     /><br/>
 
-                    <input type="text" id="3" placeholder="Data de nascimento" className="bg-slate-500"
-                    value={dados.DataNascimento}
-                    onChange={(e)=>setDados({...dados, DataNascimento: e.target.value})}
+                    <input type="text" id="3" placeholder="formação" className="bg-slate-500"
+                    value={dados.formacao}
+                    onChange={(e)=>setDados({...dados, formacao: e.target.value})}
                     /><br />
                     
                     <input type="text" id="4" placeholder="Endereço" className="bg-slate-500"
-                    value={dados.Endereco}
-                    onChange={(e)=>setDados({...dados, Endereco: e.target.value})}/><br />
+                    value={dados.endereco}
+                    onChange={(e)=>setDados({...dados, endereco: e.target.value})}/><br />
                     
                     <input type="text" id="5" placeholder="Numero de telefone" className="bg-slate-500"
-                    value={dados.NumeroTelefone}
-                    onChange={(e)=>setDados({...dados, NumeroTelefone: e.target.value})}/><br />
+                    value={dados.numeroTelefone}
+                    onChange={(e)=>setDados({...dados, numeroTelefone: e.target.value})}/><br />
                     
                     <input type="text" id="6" placeholder="E-mail" className="bg-slate-500"
-                    value={dados.Email}
-                    onChange={(e)=>setDados({...dados, Email: e.target.value})}/><br />
+                    value={dados.email}
+                    onChange={(e)=>setDados({...dados, email: e.target.value})}/><br />
 
                     <input type="password" id="7" placeholder="senha" className="bg-slate-500"
                     value={dados.Senha}
                     onChange={(e)=>setDados({...dados, Senha: e.target.value})}/><br />
 
-
+                    <input type="text" id="8" placeholder="Habilidades" className="bg-slate-500"
+                    value={dados.habilidades}
+                    onChange={(e)=>setDados({...dados, habilidades: e.target.value})}
+                    /><br/>
                 </form>
             </div>
         </div>

@@ -1,43 +1,50 @@
 import { useState } from 'react'
+import { Route, Routes, useNavigate } from 'react-router-dom'
 import './App.css'
-import './componentes/DadosPessoais'
-import DadosPessoais from './componentes/DadosPessoais'
-import GerarPdf from './componentes/GerarPdf'
 import AparenciaCurriculo from './componentes/AparenciaCurriculo'
+import DadosPessoais from './componentes/DadosPessoais'
 
 function App() {
-  const[dadosPessoais, setDadosPessoais] = useState({
-    Senha:"",
-    Cpf:"",
-    Nome: "",
-    Sobrenome:"",
-    DataNascimento:"",
-    Endereco:"",
-    NumeroTelefone:"",
-    Email:"",
+
+  const navigate = useNavigate()
+
+  const [dadosPessoais, setDadosPessoais] = useState({
+    nome: "",
+    cpf:"",
+    nome_arquivo:"",
+    senha:"",
+    endereco:"",
+    numeroTelefone:"",
+    email:"",
     foto: null,
-    Descricao:"",
-    Experiencia:"",
-    Formacao:""
+    experiencia:"",
+    formacao:"",
+    descricao:"",
+    habilidades:""
   })
 
-  return(
-    <div className='container'>
-      
-      <div className='left'>
-        <h1 >Curriculo</h1>
-        <DadosPessoais 
-          dados={dadosPessoais}
-          setDados={setDadosPessoais}>
-        </DadosPessoais>
-        <button onClick={()=>GerarPdf(dadosPessoais)}>Gerar curriculo</button>
-      </div>
+  function continuar() {
+    navigate("/pdf")
+  }
 
-      <div className='right'>
-        <AparenciaCurriculo dados={dadosPessoais} />
-      </div>
-    </div>
-  )
+  return (
+    <Routes>
+
+      <Route path="/" element={
+        <div className="min-h-screen flex flex-col justify-center items-center">
+          <h1>Curriculo</h1>
+          <DadosPessoais dados={dadosPessoais} setDados={setDadosPessoais}/>
+          <button onClick={continuar}>CONTINUAR</button>
+        </div>
+      }/>
+
+      <Route
+        path="/pdf"
+        element={<AparenciaCurriculo dados={dadosPessoais} />}
+      />
+
+    </Routes>
+  ) 
 }
 
 export default App
