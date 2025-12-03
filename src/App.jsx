@@ -31,7 +31,7 @@ function App() {
     <Routes>
 
       <Route path="/" element={
-        <div className="min-h-screen flex flex-col justify-center items-center">
+        <div>
           <h1>Curriculo</h1>
           <DadosPessoais dados={dadosPessoais} setDados={setDadosPessoais}/>
           <button onClick={continuar}>CONTINUAR</button>

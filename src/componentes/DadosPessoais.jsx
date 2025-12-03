@@ -43,44 +43,106 @@ function handleFoto(e) {
                     style={{display: "none"}}
                 />
                 <button onClick={escolherFoto}>Adicionar foto</button>
-                <form className="p-2 space-y-2">
-                    
-                    <input type="text" id="1" placeholder="nome" className="bg-slate-500" 
-                    value={dados.nome} 
-                    onChange={(e) =>setDados({ ...dados, nome: e.target.value })}
-                    /><br/>
-                    
-                    <input type="text" id="2" placeholder="Descrição" className="bg-slate-500"
-                    value={dados.descricao}
-                    onChange={(e)=>setDados({...dados, descricao: e.target.value})}
-                    /><br/>
+                <form className="grid grid-cols-1 gap-4 mt-4">
 
-                    <input type="text" id="3" placeholder="formação" className="bg-slate-500"
-                    value={dados.formacao}
-                    onChange={(e)=>setDados({...dados, formacao: e.target.value})}
-                    /><br />
-                    
-                    <input type="text" id="4" placeholder="Endereço" className="bg-slate-500"
-                    value={dados.endereco}
-                    onChange={(e)=>setDados({...dados, endereco: e.target.value})}/><br />
-                    
-                    <input type="text" id="5" placeholder="Numero de telefone" className="bg-slate-500"
-                    value={dados.numeroTelefone}
-                    onChange={(e)=>setDados({...dados, numeroTelefone: e.target.value})}/><br />
-                    
-                    <input type="text" id="6" placeholder="E-mail" className="bg-slate-500"
-                    value={dados.email}
-                    onChange={(e)=>setDados({...dados, email: e.target.value})}/><br />
+    <div>
+        <label className="block mb-1 font-semibold text-gray-700">Nome</label>
+        <input
+            type="text"
+            placeholder="Nome"
+            className="w-full p-2 rounded-md border border-gray-300 text-black focus:ring-2 focus:ring-blue-400 focus:outline-none"
+            value={dados.nome}
+            onChange={(e) => setDados({ ...dados, nome: e.target.value })}
+        />
+    </div>
 
-                    <input type="password" id="7" placeholder="senha" className="bg-slate-500"
-                    value={dados.Senha}
-                    onChange={(e)=>setDados({...dados, Senha: e.target.value})}/><br />
+    <div>
+        <label className="block mb-1 font-semibold text-gray-700">Descrição</label>
+        <textarea
+            placeholder="Descrição"
+            className="w-full p-2 rounded-md border border-gray-300 text-black focus:ring-2 focus:ring-blue-400 focus:outline-none"
+            value={dados.descricao}
+            onChange={(e) => setDados({ ...dados, descricao: e.target.value })}
+        />
+    </div>
 
-                    <input type="text" id="8" placeholder="Habilidades" className="bg-slate-500"
-                    value={dados.habilidades}
-                    onChange={(e)=>setDados({...dados, habilidades: e.target.value})}
-                    /><br/>
-                </form>
+    <div>
+        <label className="block mb-1 font-semibold text-gray-700">Formação</label>
+        <input
+            type="text"
+            placeholder="Formação"
+            className="w-full p-2 rounded-md border border-gray-300 text-black focus:ring-2 focus:ring-blue-400 focus:outline-none"
+            value={dados.formacao}
+            onChange={(e) => setDados({ ...dados, formacao: e.target.value })}
+        />
+    </div>
+
+    <div>
+        <label className="block mb-1 font-semibold text-gray-700">Endereço</label>
+        <input
+            type="text"
+            placeholder="Endereço"
+            className="w-full p-2 rounded-md border border-gray-300 text-black focus:ring-2 focus:ring-blue-400 focus:outline-none"
+            value={dados.endereco}
+            onChange={(e) => setDados({ ...dados, endereco: e.target.value })}
+        />
+    </div>
+
+    <div>
+        <label className="block mb-1 font-semibold text-gray-700">Telefone</label>
+        <input
+            type="text"
+            placeholder="Telefone"
+            className="w-full p-2 rounded-md border border-gray-300 text-black focus:ring-2 focus:ring-blue-400 focus:outline-none"
+            value={dados.numeroTelefone}
+            onChange={(e) => setDados({ ...dados, numeroTelefone: e.target.value })}
+        />
+    </div>
+
+    <div>
+        <label className="block mb-1 font-semibold text-gray-700">E-mail</label>
+        <input
+            type="email"
+            placeholder="E-mail"
+            className="w-full p-2 rounded-md border border-gray-300 text-black focus:ring-2 focus:ring-blue-400 focus:outline-none"
+            value={dados.email}
+            onChange={(e) => setDados({ ...dados, email: e.target.value })}
+        />
+    </div>
+
+    <div>
+        <label className="block mb-1 font-semibold text-gray-700">Senha</label>
+        <input
+            type="password"
+            placeholder="Senha"
+            className="w-full p-2 rounded-md border border-gray-300 text-black focus:ring-2 focus:ring-blue-400 focus:outline-none"
+            value={dados.Senha}
+            onChange={(e) => setDados({ ...dados, Senha: e.target.value })}
+        />
+    </div>
+
+    <div>
+        <label className="block mb-1 font-semibold text-gray-700">Habilidades</label>
+        <textarea
+            placeholder="Habilidades"
+            className="w-full p-2 rounded-md border border-gray-300 text-black focus:ring-2 focus:ring-blue-400 focus:outline-none"
+            value={dados.habilidades}
+            onChange={(e) => setDados({ ...dados, habilidades: e.target.value })}
+        />
+    </div>
+
+    <div>
+        <label className="block mb-1 font-semibold text-gray-700">Experiência</label>
+        <textarea
+            placeholder="Experiência profissional"
+            className="w-full p-2 rounded-md border border-gray-300 text-black focus:ring-2 focus:ring-blue-400 focus:outline-none"
+            value={dados.experiencia}
+            onChange={(e) => setDados({ ...dados, experiencia: e.target.value })}
+        />
+    </div>
+
+</form>
+
             </div>
         </div>
     )
