@@ -57,6 +57,17 @@ function handleFoto(e) {
     </div>
 
     <div>
+        <label className="block mb-1 font-semibold text-gray-700">Cpf</label>
+        <input
+            type="text"
+            placeholder="cpf"
+            className="w-full p-2 rounded-md border border-gray-300 text-black focus:ring-2 focus:ring-blue-400 focus:outline-none"
+            value={dados.cpf}
+            onChange={(e) => setDados({ ...dados, cpf: e.target.value })}
+        />
+    </div>
+
+    <div>
         <label className="block mb-1 font-semibold text-gray-700">Descrição</label>
         <textarea
             placeholder="Descrição"
